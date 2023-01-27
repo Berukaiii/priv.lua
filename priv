@@ -1,0 +1,1307 @@
+if game.PlaceId == 2788229376 then
+    wait(5)
+    assert(getrawmetatable)
+    gmt = getrawmetatable(game)
+    setreadonly(gmt, false)
+    old = gmt.__namecall
+    gmt.__namecall =
+        newcclosure(
+            function(self, ...)
+            local args = {...}
+            if tostring(args[1]) == "BreathingHAMON" then
+                return
+            elseif tostring(args[1]) == "TeleportDetect" then
+                return
+            elseif tostring(args[1]) == "CHECKER_1" then
+                return
+            elseif tostring(args[1]) == "CHECKER" then
+                return
+            elseif tostring(args[1]) == "GUI_CHECK" then
+                return
+            elseif tostring(args[1]) == "OneMoreTime" then
+                return
+            elseif tostring(args[1]) == "checkingSPEED" then
+                return
+            elseif tostring(args[1]) == "BANREMOTE" then
+                return
+            elseif tostring(args[1]) == "PERMAIDBAN" then
+                return
+            elseif tostring(args[1]) == "KICKREMOTE" then
+                return
+            elseif tostring(args[1]) == "BR_KICKPC" then
+                return end
+    
+            return old(self, ...)
+        end)
+        end
+        wait(0.1)
+
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/Splix"))()
+
+local window = library:new({textsize = 13.5,font = Enum.Font.RobotoMono,name = "priv",color = Color3.fromRGB(19, 3, 255)})
+
+local tab = window:page({name = "Aimlock Tab"})
+local tab2 = window:page({name = "Visuals"})
+local tab3 = window:page({name = "Misc"})
+local tab4 = window:page({name = "Fun"})
+
+local section1 = tab:section({name = "Aimlock Settings",side = "left",size = 250})
+local section2 = tab2:section({name = "Visuals",side = "left",size = 250})
+local section3 = tab3:section({name = "Misc ",side = "left",size = 250})
+local section4 = tab4:section({name = "Fun",side = "left",size = 250})
+
+
+    _G.Types = {
+        Ball = Enum.PartType.Ball,
+        Block = Enum.PartType.Block, 
+        Cylinder = Enum.PartType.Cylinder
+    }
+    
+    --variables                 
+        local Tracer = Instance.new("Part", game.Workspace)
+    Tracer.Name = "gay"
+    Tracer.Shape = _G.Types.Ball
+    Tracer.Material = "ForceField"
+    Tracer.Size = Vector3.new(7,7,7)
+    game:GetService("RunService").RenderStepped:Connect(function()
+    Tracer.Transparency = Options.MySlider.Value
+    Tracer.Color = Options.ColorPicker.Value
+    end)
+    --]]
+    _G.Types = {
+        Ball = Enum.PartType.Ball,
+        Block = Enum.PartType.Block, 
+        Cylinder = Enum.PartType.Cylinder
+    }
+    
+    --variables                 
+        local Tracer = Instance.new("Part", game.Workspace)
+    Tracer.Name = "gay"
+    Tracer.Shape = _G.Types.Ball
+    Tracer.Material = "ForceField"
+    Tracer.Size = Vector3.new(7,7,7)
+    game:GetService("RunService").RenderStepped:Connect(function()
+    Tracer.Transparency = Options.MySlider.Value
+    Tracer.Color = Options.ColorPicker.Value
+    end)
+    --]]
+Settings = {
+    priv = {
+    Enabled = true,
+    Key = "q",
+    showdot = false,
+    airshots = true,
+    notifaction = false,
+    pingprediction = false,
+    FOV = math.huge,
+    RESOVLER = false,
+    Tracer = false,
+    TracerColor = Color3.fromRGB(255, 255, 255),
+    TracerTransparency = 0.75,
+    TracerThickness = 5,
+    Circles = false,
+    CircleFOV = 25,
+    CircleColor = Color3.new(255, 255, 255),
+    CircleThickness = 2,
+    CircleFilled = true,
+    CircleTransparency = 0.10,
+    CircleTransparencyOutline = 0,
+    OutlineColor = Color3.new(255, 255, 255),
+    Texts = false, 
+    TextColor = Color3.fromRGB(161, 0, 241),
+    TextSize = 15,
+    TextInput = "priv",
+    Hitbox = true,
+    NoBulletDelay = true,
+    Autoclicker = false,
+    AutoclickerTime = 0.01,
+    AutoclickerKey = "v",
+    AnimationPack = false
+
+}
+}
+
+
+section1:button({name = "AimLock",callback = function()
+    local SelectedPart = "HumanoidRootPart"
+    local Prediction = true
+    local PredictionValue = 0.132
+    
+
+
+local AnchorCount = 0
+        local MaxAnchor = 50
+
+            local CC = game:GetService"Workspace".CurrentCamera
+                local Plr;
+                    local enabled = false
+                        local accomidationfactor = 0.132
+            local mouse = game.Players.LocalPlayer:GetMouse()
+                
+                        local Inset = game:GetService("GuiService"):GetGuiInset().Y
+            local Line = Drawing.new("Line")
+                local Text = Drawing.new("Text")
+                      local Circle = Drawing.new("Circle")
+                      local Circle1 = Drawing.new("Circle")
+                      
+                      
+                       _G.Types = {
+        Ball = Enum.PartType.Ball,
+        Block = Enum.PartType.Block, 
+        Cylinder = Enum.PartType.Cylinder
+    }
+                      
+                      local placemarker = Instance.new("Part", game.Workspace)
+                      placemarker.Shape = _G.Types.Ball
+                      placemarker.Material = "ForceField"
+                      placemarker.Color = Color3.new(0, 1, 1)
+
+function makemarker(Parent, Adornee, Color, Size, Size2)
+    local e = Instance.new("BillboardGui", Parent)
+    e.Name = "PP"
+    e.Adornee = Adornee
+    e.Size = UDim2.new(Size, Size2, Size, Size2)
+    e.AlwaysOnTop = Settings.priv.showdot
+    local a = Instance.new("Frame", e)
+    if Settings.priv.showdot == true then
+    a.Size = UDim2.new(1, 0, 1, 0)
+    else
+    a.Size = UDim2.new(0, 0, 0, 0)
+    end
+    if Settings.priv.showdot == true then
+    a.Transparency = 0
+    a.BackgroundTransparency = 0
+    else
+    a.Transparency = 1
+    a.BackgroundTransparency = 1
+    end
+    a.BackgroundColor3 = Color
+    local g = Instance.new("UICorner", a)
+    if Settings.priv.showdot == false then
+    g.CornerRadius = UDim.new(0, 0)
+    else
+    g.CornerRadius = UDim.new(1, 1) 
+    end
+    return(e)
+end
+
+
+local data = game.Players:GetPlayers()
+function noob(player)
+    local character
+    repeat wait() until player.Character
+    local handler = makemarker(guimain, player.Character:WaitForChild(SelectedPart), Color3.fromRGB(0, 255, 229), 0.3, 3)
+    handler.Name = player.Name
+    player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild(SelectedPart) end)
+
+
+    spawn(function()
+        while wait() do
+            if player.Character then
+            end
+        end
+    end)
+end
+
+for i = 1, #data do
+    if data[i] ~= game.Players.LocalPlayer then
+        noob(data[i])
+    end
+end
+
+game.Players.PlayerAdded:connect(function(Player)
+    noob(Player)
+end)
+
+spawn(function()
+    placemarker.Anchored = true
+    placemarker.CanCollide = false
+    if Settings.priv.showdot == true then
+    placemarker.Size = Vector3.new(11, 11, 11)
+    else
+    placemarker.Size = Vector3.new(0, 0, 0)
+    end
+    if Settings.priv.Hitbox == true then
+    placemarker.Transparency = 0.30
+    else
+    placemarker.Transparency = 1
+    end
+    if Settings.priv.showdot then
+    makemarker(placemarker, placemarker, Color3.fromRGB(0, 255, 238), 0.80, 0)
+    end
+end)
+
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(k)
+    if k == Settings.priv.Key and Settings.priv.Enabled then
+        if enabled == true then
+            enabled = false
+            if Settings.priv.notifaction == true then
+                Plr = getClosestPlayerToCursor()
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "priv";
+                Text = "  Unlocked",
+                Icon = "http://www.roblox.com/asset/?id=9794138570",
+                Duration = 3
+            })
+        end
+        else
+            Plr = getClosestPlayerToCursor()
+            enabled = true
+            if Settings.priv.notifaction == true then
+
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "priv";
+                    Text = "  Target: "..tostring(Plr.Character.Humanoid.DisplayName),
+                    Icon = "http://www.roblox.com/asset/?id=9794138570",
+                    Duration = 3
+                })
+
+            end
+        end
+    end
+end)
+
+
+
+function getClosestPlayerToCursor()
+    local closestPlayer
+    local shortestDistance = Settings.priv.FOV
+
+    for i, v in pairs(game.Players:GetPlayers()) do
+        if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("HumanoidRootPart") then
+            local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+            local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+            if magnitude < shortestDistance then
+                closestPlayer = v
+                shortestDistance = magnitude
+            end
+        end
+    end
+    return closestPlayer
+end
+
+local pingvalue = nil;
+local split = nil;
+local ping = nil;
+
+game:GetService"RunService".Stepped:connect(function()
+    if enabled and Plr.Character ~= nil and Plr.Character:FindFirstChild("HumanoidRootPart") then
+        placemarker.CFrame = CFrame.new(Plr.Character.HumanoidRootPart.Position)
+                        local Vector1 = CC:WorldToViewportPoint(Plr.Character.HumanoidRootPart.Position)
+        Line.Color = Settings.priv.TracerColor
+            Line.Transparency = Settings.priv.TracerTransparency
+            Line.Thickness = Settings.priv.TracerThickness
+            Line.From = Vector2.new(mouse.X, mouse.Y + Inset)
+            Line.To = Vector2.new(Vector1.X, Vector1.Y)
+            Line.Visible = Settings.priv.Tracer
+            Text.Position = Vector2.new(mouse.X, mouse.Y + Inset)
+            Text.Visible = Settings.priv.Texts
+            Text.Center = true
+            Text.Outline = true
+            Text.Font = 1
+            Text.Size = Settings.priv.TextSize
+            Text.Color = Settings.priv.TextColor
+            Text.Text = Settings.priv.TextInput
+            Circle.Position = Vector2.new(mouse.X, mouse.Y + Inset)
+            Circle.Visible = Settings.priv.Circles
+            Circle.Thickness = 1.5
+            Circle.Thickness = Settings.priv.CircleThickness
+            Circle.Radius = Settings.priv.CircleFOV
+            Circle.Color = Settings.priv.CircleColor
+            Circle.Filled = Settings.priv.CircleFilled
+            Circle.Transparency = Settings.priv.CircleTransparency
+            Circle1.Visible = true
+            Circle1.Radius = Settings.priv.CircleTransparencyOutline
+            Circle1.Position = Vector2.new(mouse.X, mouse.Y + Inset)
+            Circle1.Thickness = 5
+            Circle1.Color = Settings.priv.OutlineColor
+
+    else
+            Circle.Visible = false
+            Line.Visible = false
+            Text.Visible = false
+            Circle1.Visible = false
+        placemarker.CFrame = CFrame.new(0, 9999, 0)
+    end
+    if Settings.priv.pingprediction == true then
+         pingvalue = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+         split = string.split(pingvalue,'(')
+         ping = tonumber(split[1])
+        if ping < 130 then
+            PredictionValue = 0.151
+        elseif ping < 125 then
+            PredictionValue = 0.149
+        elseif ping < 110 then
+            PredictionValue = 0.146
+        elseif ping < 105 then
+            PredictionValue = 0.138
+        elseif ping < 90 then
+            PredictionValue = 0.136
+        elseif ping < 80 then
+            PredictionValue = 0.134
+        elseif ping < 70 then
+            PredictionValue = 0.131
+        elseif ping < 60 then
+            PredictionValue = 0.1229
+        elseif ping < 50 then
+            PredictionValue = 0.1225
+        elseif ping < 40 then
+            PredictionValue = 0.1256
+        end
+    end
+end)
+
+local mt = getrawmetatable(game)
+local old = mt.__namecall
+setreadonly(mt, false)
+mt.__namecall = newcclosure(function(...)
+    local args = {...}
+    if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" and Settings.priv.Enabled and Plr.Character ~= nil then
+
+        -- args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*accomidationfactor)
+        --[[
+        if Settings.priv.airshots == true then
+            if game.Workspace.Players[Plr.Name].Humanoid:GetState() == Enum.HumanoidStateType.Freefall then -- Plr.Character:WaitForChild("Humanoid"):GetState() == Enum.HumanoidStateType.Freefall
+                
+                --// Airshot
+                args[3] = Plr.Character.LeftFoot.Position+(Plr.Character.LeftFoot.Velocity*PredictionValue)
+
+            else
+                args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*PredictionValue)
+
+            end
+        else
+args[3] = Plr.Character.HumanoidRootPart.Position+(Plr.Character.HumanoidRootPart.Velocity*PredictionValue)
+end
+]]
+if Prediction == true then
+            
+args[3] = Plr.Character[SelectedPart].Position+(Plr.Character[SelectedPart].Velocity*PredictionValue)
+
+else
+
+args[3] = Plr.Character[SelectedPart].Position
+
+end
+
+return old(unpack(args))
+end
+return old(...)
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    if Settings.priv.RESOVLER == true and Plr.Character ~= nil and enabled and Settings.priv.Enabled then
+    if Settings.priv.airshots == true and enabled and Plr.Character ~= nil then
+        
+    if game.Workspace.Players[Plr.Name].Humanoid:GetState() == Enum.HumanoidStateType.Freefall then -- Plr.Character:WaitForChild("Humanoid"):GetState() == Enum.HumanoidStateType.Freefall
+            
+
+
+    if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
+    AnchorCount = AnchorCount + 1
+    if AnchorCount >= MaxAnchor then
+    Prediction = false
+    wait(2)
+    AnchorCount = 0;
+    end
+    else
+    Prediction = true
+    AnchorCount = 0;
+    end
+
+    SelectedPart = "LeftFoot"
+
+    else
+            
+
+    if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
+    AnchorCount = AnchorCount + 1
+    if AnchorCount >= MaxAnchor then
+    Prediction = false
+    wait(2)
+    AnchorCount = 0;
+    end
+    
+    else
+    Prediction = true
+    AnchorCount = 0;
+    end
+
+    SelectedPart = "HumanoidRootPart"
+
+    end
+    else
+
+            
+
+    if Plr.Character ~= nil and Plr.Character.HumanoidRootPart.Anchored == true then
+    AnchorCount = AnchorCount + 1
+    if AnchorCount >= MaxAnchor then
+    Prediction = false
+    wait(2)
+    AnchorCount = 0;
+    end
+    else
+     Prediction = true
+     AnchorCount = 0;
+    end
+    SelectedPart = "HumanoidRootPart"
+    end
+    else
+    SelectedPart = "HumanoidRootPart"
+    end
+    end)
+
+    if Settings.priv.NoBulletDelay == true then
+        local FuckDelay = game:GetService("CorePackages").Packages
+        FuckDelay:Destroy()
+    end
+
+    if Settings.priv.Autoclicker == true then
+        local time = Settings.priv.AutoclickerTime --decrease if too slow increase if too fast
+
+        click = false
+        m = game.Players.LocalPlayer:GetMouse()
+        m.KeyDown:connect(function(key)
+        if key == Settings.priv.AutoclickerKey then
+        if click == true then click = false
+        elseif
+        click == false then click = true
+        
+        while click == true do 
+        wait(time)
+        mouse1click()
+        end
+        end
+        end
+        end)
+    end
+    
+    if Settings.priv.AnimationPack == true then
+        -- Animation Pack --
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for _, v in next, game:GetService("CoreGui"):GetChildren() do
+if (v.Name:match("Animation")) then
+    v:Destroy()
+end
+end
+
+local Folder = Instance.new('Folder', game:GetService("Workspace"))
+Folder.Name = ("Animation")
+
+local LeanAnimation = Instance.new("Animation", Folder)
+LeanAnimation.Name = "LeanAnimation"
+LeanAnimation.AnimationId = "rbxassetid://3152375249"
+
+local LayAnimation = Instance.new("Animation", Folder)
+LayAnimation.Name = "LayAnimation"
+LayAnimation.AnimationId = "rbxassetid://3152378852"
+
+local Dance1Animation = Instance.new("Animation", Folder)
+Dance1Animation.Name = "Dance1Animation"
+Dance1Animation.AnimationId = "rbxassetid://3189773368"
+
+local Dance2Animation = Instance.new("Animation", Folder)
+Dance2Animation.Name = "Dance2Animation"
+Dance2Animation.AnimationId = "rbxassetid://3189776546"
+
+local GreetAnimation = Instance.new("Animation", Folder)
+GreetAnimation.Name = "GreetAnimation"
+GreetAnimation.AnimationId = "rbxassetid://3189777795"
+
+local ChestPumpAnimation = Instance.new("Animation", Folder)
+ChestPumpAnimation.Name = "ChestPumpAnimation"
+ChestPumpAnimation.AnimationId = "rbxassetid://3189779152"
+
+local PrayingAnimation = Instance.new("Animation", Folder)
+PrayingAnimation.Name = "PrayingAnimation"
+PrayingAnimation.AnimationId = "rbxassetid://3487719500"
+
+if game.PlaceId == 2788229376 then
+function AnimationPack(Character)
+    Character:WaitForChild'HumanoidRootPart'
+    local Animation = Instance.new("ScreenGui")
+    local AnimationPack = Instance.new("TextButton")
+    local CloseButton = Instance.new("TextButton")
+    local ScrollingFrame = Instance.new("ScrollingFrame")
+    local ChestPumpButton = Instance.new("TextButton")
+    local Dance1Button = Instance.new("TextButton")
+    local Dance2Button = Instance.new("TextButton")
+    local LayButton = Instance.new("TextButton")
+    local GreetButton = Instance.new("TextButton")
+    local LeanButton = Instance.new("TextButton")
+    local PrayingButton = Instance.new("TextButton")
+
+    Animation.Name = "Animation"
+    Animation.Parent = game.CoreGui
+    Animation.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+    AnimationPack.Name = "AnimationPack"
+    AnimationPack.Parent = Animation
+    AnimationPack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    AnimationPack.BorderSizePixel = 0
+    AnimationPack.Position = UDim2.new(0, 0, 0.5, 0)
+    AnimationPack.Size = UDim2.new(0, 100, 0, 20)
+    AnimationPack.Visible = false
+    AnimationPack.Font = Enum.Font.SourceSansBold
+    AnimationPack.Text = "Animations"
+    AnimationPack.TextColor3 = Color3.fromRGB(0, 0, 0)
+    AnimationPack.TextSize = 18.000
+
+    CloseButton.Name = "CloseButton"
+    CloseButton.Parent = AnimationPack
+    CloseButton.BackgroundColor3 = Color3.fromRGB(255, 112, 112)
+    CloseButton.Position = UDim2.new(0, 0, 0, 97)
+    CloseButton.Size = UDim2.new(0, 120, 0, 25)
+    CloseButton.Visible = false
+    CloseButton.Font = Enum.Font.SourceSansBold
+    CloseButton.Text = "CLOSE"
+    CloseButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    CloseButton.TextSize = 30.000
+
+    ScrollingFrame.Parent = AnimationPack
+    ScrollingFrame.Active = true
+    ScrollingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+    ScrollingFrame.BackgroundColor3 = Color3.fromRGB(102, 102, 102)
+    ScrollingFrame.Position = UDim2.new(0, 60, 0, 0)
+    ScrollingFrame.Size = UDim2.new(0, 120, 0, 195)
+    ScrollingFrame.Visible = false
+    ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1, 200)
+
+    ChestPumpButton.Name = "ChestPumpButton"
+    ChestPumpButton.Parent = ScrollingFrame
+    ChestPumpButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    ChestPumpButton.Position = UDim2.new(0, 0, 0.727272749, 0)
+    ChestPumpButton.Size = UDim2.new(1, 0, 0, 30)
+    ChestPumpButton.Font = Enum.Font.GothamBlack
+    ChestPumpButton.Text = "Chest Pump"
+    ChestPumpButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    ChestPumpButton.TextSize = 12.000
+    ChestPumpButton.TextWrapped = true
+
+    Dance1Button.Name = "Dance1Button"
+    Dance1Button.Parent = ScrollingFrame
+    Dance1Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Dance1Button.Position = UDim2.new(0, 0, 0.290909111, 0)
+    Dance1Button.Size = UDim2.new(1, 0, 0, 30)
+    Dance1Button.Font = Enum.Font.GothamBlack
+    Dance1Button.Text = "Dance1"
+    Dance1Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+    Dance1Button.TextSize = 12.000
+    Dance1Button.TextWrapped = true
+
+    Dance2Button.Name = "Dance2Button"
+    Dance2Button.Parent = ScrollingFrame
+    Dance2Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Dance2Button.Position = UDim2.new(0, 0, 0.436363667, 0)
+    Dance2Button.Size = UDim2.new(1, 0, 0, 30)
+    Dance2Button.Font = Enum.Font.GothamBlack
+    Dance2Button.Text = "Dance2"
+    Dance2Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+    Dance2Button.TextSize = 12.000
+    Dance2Button.TextWrapped = true
+
+    LayButton.Name = "LayButton"
+    LayButton.Parent = ScrollingFrame
+    LayButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    LayButton.Position = UDim2.new(0, 0, 0.145454556, 0)
+    LayButton.Size = UDim2.new(1, 0, 0, 30)
+    LayButton.Font = Enum.Font.GothamBlack
+    LayButton.Text = "Lay"
+    LayButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    LayButton.TextSize = 12.000
+    LayButton.TextWrapped = true
+
+    GreetButton.Name = "GreetButton"
+    GreetButton.Parent = ScrollingFrame
+    GreetButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    GreetButton.Position = UDim2.new(0, 0, 0.581818223, 0)
+    GreetButton.Size = UDim2.new(1, 0, 0, 30)
+    GreetButton.Font = Enum.Font.GothamBlack
+    GreetButton.Text = "Greet"
+    GreetButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    GreetButton.TextSize = 12.000
+    GreetButton.TextWrapped = true
+
+    LeanButton.Name = "LeanButton"
+    LeanButton.Parent = ScrollingFrame
+    LeanButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    LeanButton.Size = UDim2.new(1, 0, 0, 30)
+    LeanButton.Font = Enum.Font.GothamBlack
+    LeanButton.Text = "Lean"
+    LeanButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    LeanButton.TextSize = 12.000
+    LeanButton.TextWrapped = true
+
+    PrayingButton.Name = "PrayingButton"
+    PrayingButton.Parent = ScrollingFrame
+    PrayingButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    PrayingButton.Position = UDim2.new(5.96046448e-08, 0, 0.872727275, 0)
+    PrayingButton.Size = UDim2.new(1, 0, 0, 30)
+    PrayingButton.Font = Enum.Font.GothamBlack
+    PrayingButton.Text = "Praying"
+    PrayingButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    PrayingButton.TextSize = 12.000
+    PrayingButton.TextWrapped = true
+
+    wait(1)
+
+    local AnimationPack = game:GetService("CoreGui").Animation.AnimationPack
+    local ScrollingFrame = AnimationPack.ScrollingFrame
+    local CloseButton = AnimationPack.CloseButton
+
+    AnimationPack.Visible = true
+
+    local Lean = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LeanAnimation)
+
+    local Lay = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(LayAnimation)
+
+    local Dance1 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance1Animation)
+
+    local Dance2 = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(Dance2Animation)
+
+    local Greet = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(GreetAnimation)
+
+    local ChestPump = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(ChestPumpAnimation)
+
+    local Praying = game:GetService("Players").LocalPlayer.Character.Humanoid:LoadAnimation(PrayingAnimation)
+
+    function Stop()
+        Lay:Stop()
+        Lean:Stop()
+        Dance1:Stop()
+        Dance2:Stop()
+        Greet:Stop()
+        ChestPump:Stop()
+        Praying:Stop()
+    end
+
+    local LeanTextButton = ScrollingFrame.LeanButton
+    local LayTextButton = ScrollingFrame.LayButton
+    local Dance1TextButton = ScrollingFrame.Dance1Button
+    local Dance2TextButton = ScrollingFrame.Dance2Button
+    local GreetTextButton = ScrollingFrame.GreetButton
+    local ChestPumpTextButton = ScrollingFrame.ChestPumpButton
+    local PrayingTextButton = ScrollingFrame.PrayingButton
+
+    AnimationPack.MouseButton1Click:Connect(function()
+        if ScrollingFrame.Visible == false then
+            ScrollingFrame.Visible = true
+            CloseButton.Visible = true
+        end
+    end)
+    CloseButton.MouseButton1Click:Connect(function()
+        if ScrollingFrame.Visible == true then
+            ScrollingFrame.Visible = false
+            CloseButton.Visible = false
+        end
+    end)
+    LeanTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Lean:Play()
+    end)
+    LayTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Lay:Play()
+    end)
+    Dance1TextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Dance1:Play()
+    end)
+    Dance2TextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Dance2:Play()
+    end)
+    GreetTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Greet:Play()
+    end)
+    ChestPumpTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        ChestPump:Play()
+    end)
+    PrayingTextButton.MouseButton1Click:Connect(function()
+        Stop()
+        Praying:Play()
+    end)
+
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Running:Connect(function()
+        Stop()
+    end)
+    game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+        game.CoreGui.Animation:Destroy()
+    end)
+end
+AnimationPack(game.Players.LocalPlayer.Character)
+game.Players.LocalPlayer.CharacterAdded:Connect(AnimationPack)
+end
+end
+end})
+--\\[End Of Aimlock]||--
+
+section1:toggle({name = "Fov",def = false,callback = function(value)
+    Settings.priv.Circles = value
+end})
+
+section1:slider({name = "Fov Size",def = 1, max = 500,min = 1,rounding = true,ticking = false,measuring = "",callback = function(value)
+    Settings.priv.CircleFOV = value
+ end})
+
+
+section1:toggle({name = "Fov Filled",def = false,callback = function(value)
+    Settings.priv.CircleFilled = value
+end})
+
+section1:textbox({name = "Prediction",def = "Enter Your Prediction",placeholder = "Enter Your Prediction",callback = function(value)
+    Settings.priv.PredictionValue = value
+ end})
+
+ section1:textbox({name = "Part",def = "Type Your Part",placeholder = "Type Your Part",callback = function(value)
+ local SelectedPart = value
+end})
+
+section1:toggle({name = "Tracer",def = false,callback = function(value)
+    tog = value
+    Settings.priv.Tracer = value
+  end})
+
+  section1:toggle({name = "Text",def = false,callback = function(value)
+    tog = value
+    Settings.priv.Texts = value
+  end})
+
+  section1:toggle({name = "Notifactions",def = false,callback = function(value)
+    tog = value
+    Settings.priv.notifaction = value
+  end})
+
+
+  section2:button({name = "Bullet Color",callback = function()
+    BulletTracers = true
+bullet_tracer_color = Color3.fromRGB(143, 0, 252)
+
+function GetGun()
+    if game.Players.LocalPlayer.Character then
+        for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+            if v:FindFirstChild 'Ammo' then
+                return v
+            end
+        end
+    end
+    return nil
+end
+
+local Services = {
+    Players = game:GetService("Players"),
+    UserInputService = game:GetService("UserInputService"),
+    RunService = game:GetService("RunService"),
+}
+
+local Local = {
+    Player = Services.Players.LocalPlayer,
+    Mouse = Services.Players.LocalPlayer:GetMouse(),
+}
+local Other = {
+    Camera = workspace.CurrentCamera,
+    BeamPart = Instance.new("Part", workspace)
+}
+
+Other.BeamPart.Name = "BeamPart"
+Other.BeamPart.Transparency = 1
+local Settings = {
+    StartColor = bullet_tracer_color,
+    EndColor = bullet_tracer_color,
+    StartWidth = 3,
+    EndWidth = 3,
+    ShowImpactPoint = false,
+    ImpactTransparency = 0.5,
+    ImpactColor = Color3.new(1, 1, 1),
+    Time = 1.2,
+}
+game:GetService "RunService".Heartbeat:Connect(function()
+    if game:GetService("Workspace").Ignored:FindFirstChild 'BULLET_RAYS' and BulletTracers then
+        game:GetService("Workspace").Ignored.BULLET_RAYS:Destroy()
+    end
+end)
+local funcs = {}
+Local.Mouse.TargetFilter = Other.BeamPart
+function funcs:Beam(v1, v2)
+    v2 = Vector3.new(v2.X - 0.1, v2.Y + 0.2, v2.Z)
+    local colorSequence = ColorSequence.new({
+        ColorSequenceKeypoint.new(0, bullet_tracer_color),
+        ColorSequenceKeypoint.new(1, bullet_tracer_color),
+    })
+    local Part = Instance.new("Part", Other.BeamPart)
+    Part.Size = Vector3.new(0, 0, 0)
+    Part.Massless = true
+    Part.Transparency = 1
+    Part.CanCollide = false
+    Part.Position = v1
+    Part.Anchored = true
+    local Attachment = Instance.new("Attachment", Part)
+    local Part2 = Instance.new("Part", Other.BeamPart)
+    Part2.Size = Vector3.new(0, 0, 0)
+    Part2.Transparency = 0
+    Part2.CanCollide = false
+    Part2.Position = v2
+    Part2.Anchored = true
+    Part2.Material = Enum.Material.ForceField
+    Part2.Color = Settings.ImpactColor
+    Part2.Massless = true
+    local Attachment2 = Instance.new("Attachment", Part2)
+    local Beam = Instance.new("Beam", Part)
+    Beam.FaceCamera = true
+    Beam.Color = colorSequence
+    Beam.Attachment0 = Attachment
+    Beam.Attachment1 = Attachment2
+    Beam.LightEmission = 6
+    Beam.LightInfluence = 1
+    Beam.Width0 = Settings.StartWidth
+    Beam.Width1 = Settings.EndWidth
+    Beam.Texture = "http://www.roblox.com/asset/?id=9150663556"
+    Beam.TextureSpeed = 2
+    Beam.TextureLength = 1
+    delay(Settings.Time, function()
+        Part:Destroy()
+        Part2:Destroy()
+    end)
+end
+
+spawn(function()
+    while task.wait(0.5) do
+        gun = GetGun()
+        if gun then
+            LastAmmo = gun.Ammo.Value
+            gun.Ammo:GetPropertyChangedSignal("Value"):Connect(function()
+                if BulletTracers and gun.Ammo.Value < LastAmmo then
+                    LastAmmo = gun.Ammo.Value
+                    funcs:Beam(gun.Handle.Position, Local.Mouse.hit.p)
+                end
+            end)
+        end
+    end
+end)
+ end})
+
+
+ section2:button({name = "Esp",callback = function()
+    local lplr = game.Players.LocalPlayer
+local camera = game:GetService("Workspace").CurrentCamera
+local CurrentCamera = workspace.CurrentCamera
+local worldToViewportPoint = CurrentCamera.worldToViewportPoint
+
+local HeadOff = Vector3.new(0, 0.5, 0)
+local LegOff = Vector3.new(0,3,0)
+
+for i,v in pairs(game.Players:GetChildren()) do
+    local BoxOutline = Drawing.new("Square")
+    BoxOutline.Visible = false
+    BoxOutline.Color = Color3.new(0,0,0)
+    BoxOutline.Thickness = 3
+    BoxOutline.Transparency = 1
+    BoxOutline.Filled = false
+
+    local Box = Drawing.new("Square")
+    Box.Visible = false
+    Box.Color = Color3.new(1,1,1)
+    Box.Thickness = 1
+    Box.Transparency = 1
+    Box.Filled = false
+
+    local HealthBarOutline = Drawing.new("Square")
+    HealthBarOutline.Thickness = 3
+    HealthBarOutline.Filled = false
+    HealthBarOutline.Color = Color3.new(0,0,0)
+    HealthBarOutline.Transparency = 1
+    HealthBarOutline.Visible = false
+
+    local HealthBar = Drawing.new("Square")
+    HealthBar.Thickness = 1
+    HealthBar.Filled = false
+    HealthBar.Transparency = 1
+    HealthBar.Visible = false
+
+    function boxesp()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
+                local Vector, onScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+
+                local RootPart = v.Character.HumanoidRootPart
+                local Head = v.Character.Head
+                local RootPosition, RootVis = worldToViewportPoint(CurrentCamera, RootPart.Position)
+                local HeadPosition = worldToViewportPoint(CurrentCamera, Head.Position + HeadOff)
+                local LegPosition = worldToViewportPoint(CurrentCamera, RootPart.Position - LegOff)
+
+                if onScreen then
+                    BoxOutline.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+                    BoxOutline.Position = Vector2.new(RootPosition.X - BoxOutline.Size.X / 2, RootPosition.Y - BoxOutline.Size.Y / 2)
+                    BoxOutline.Visible = true
+
+                    Box.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+                    Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
+                    Box.Visible = true
+
+                    HealthBarOutline.Size = Vector2.new(2, HeadPosition.Y - LegPosition.Y)
+                    HealthBarOutline.Position = BoxOutline.Position - Vector2.new(6,0)
+                    HealthBarOutline.Visible = true
+
+                    HealthBar.Size = Vector2.new(2, (HeadPosition.Y - LegPosition.Y) / (game:GetService("Players")[v.Character.Name].NRPBS["MaxHealth"].Value / math.clamp(game:GetService("Players")[v.Character.Name].NRPBS["Health"].Value, 0, game:GetService("Players")[v.Character.Name].NRPBS:WaitForChild("MaxHealth").Value)))
+                    HealthBar.Position = Vector2.new(Box.Position.X - 6, Box.Position.Y + (1 / HealthBar.Size.Y))
+                    HealthBar.Color = Color3.fromRGB(255 - 255 / (game:GetService("Players")[v.Character.Name].NRPBS["MaxHealth"].Value / game:GetService("Players")[v.Character.Name].NRPBS["Health"].Value), 255 / (game:GetService("Players")[v.Character.Name].NRPBS["MaxHealth"].Value / game:GetService("Players")[v.Character.Name].NRPBS["Health"].Value), 0)
+                    HealthBar.Visible = true
+
+                    if v.TeamColor == lplr.TeamColor then
+                        --- Our Team
+                        BoxOutline.Visible = false
+                        Box.Visible = false
+                        HealthBarOutline.Visible = false
+                        HealthBar.Visible = false
+                    else
+                        ---Enemy Team
+                        BoxOutline.Visible = true
+                        Box.Visible = true
+                        HealthBarOutline.Visible = true
+                        HealthBar.Visible = true
+                    end
+
+                else
+                    BoxOutline.Visible = false
+                    Box.Visible = false
+                    HealthBarOutline.Visible = false
+                    HealthBar.Visible = false
+                end
+            else
+                BoxOutline.Visible = false
+                Box.Visible = false
+                HealthBarOutline.Visible = false
+                HealthBar.Visible = false
+            end
+        end)
+    end
+    coroutine.wrap(boxesp)()
+end
+
+game.Players.PlayerAdded:Connect(function(v)
+    local BoxOutline = Drawing.new("Square")
+    BoxOutline.Visible = false
+    BoxOutline.Color = Color3.fromRGB(0, 255, 13)
+    BoxOutline.Thickness = 3
+    BoxOutline.Transparency = 1
+    BoxOutline.Filled = false
+
+    local Box = Drawing.new("Square")
+    Box.Visible = false
+    Box.Color = Color3.new(1,1,1)
+    Box.Thickness = 1
+    Box.Transparency = 1
+    Box.Filled = false
+
+    local HealthBarOutline = Drawing.new("Square")
+    HealthBarOutline.Thickness = 3
+    HealthBarOutline.Filled = false
+    HealthBarOutline.Color = Color3.new(0,0,0)
+    HealthBarOutline.Transparency = 1
+    HealthBarOutline.Visible = false
+
+    local HealthBar = Drawing.new("Square")
+    HealthBar.Thickness = 1
+    HealthBar.Filled = false
+    HealthBar.Transparency = 1
+    HealthBar.Visible = false
+
+    function boxesp()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v ~= lplr and v.Character.Humanoid.Health > 0 then
+                local Vector, onScreen = camera:worldToViewportPoint(v.Character.HumanoidRootPart.Position)
+
+                local RootPart = v.Character.HumanoidRootPart
+                local Head = v.Character.Head
+                local RootPosition, RootVis = worldToViewportPoint(CurrentCamera, RootPart.Position)
+                local HeadPosition = worldToViewportPoint(CurrentCamera, Head.Position + HeadOff)
+                local LegPosition = worldToViewportPoint(CurrentCamera, RootPart.Position - LegOff)
+
+                if onScreen then
+                    BoxOutline.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+                    BoxOutline.Position = Vector2.new(RootPosition.X - BoxOutline.Size.X / 2, RootPosition.Y - BoxOutline.Size.Y / 2)
+                    BoxOutline.Visible = true
+
+                    Box.Size = Vector2.new(1000 / RootPosition.Z, HeadPosition.Y - LegPosition.Y)
+                    Box.Position = Vector2.new(RootPosition.X - Box.Size.X / 2, RootPosition.Y - Box.Size.Y / 2)
+                    Box.Visible = true
+
+                    HealthBarOutline.Size = Vector2.new(2, HeadPosition.Y - LegPosition.Y)
+                    HealthBarOutline.Position = BoxOutline.Position - Vector2.new(6,0)
+                    HealthBarOutline.Visible = true
+
+                    HealthBar.Size = Vector2.new(2, (HeadPosition.Y - LegPosition.Y) / (game:GetService("Players")[v.Character.Name].NRPBS["MaxHealth"].Value / math.clamp(game:GetService("Players")[v.Character.Name].NRPBS["Health"].Value, 0, game:GetService("Players")[v.Character.Name].NRPBS:WaitForChild("MaxHealth").Value)))
+                    HealthBar.Position = Vector2.new(Box.Position.X - 6, Box.Position.Y + (1/HealthBar.Size.Y))
+		    HealthBar.Color = Color3.fromRGB(255 - 255 / (game:GetService("Players")[v.Character.Name].NRPBS["MaxHealth"].Value / game:GetService("Players")[v.Character.Name].NRPBS["Health"].Value), 255 / (game:GetService("Players")[v.Character.Name].NRPBS["MaxHealth"].Value / game:GetService("Players")[v.Character.Name].NRPBS["Health"].Value), 0)                    
+		    HealthBar.Visible = true
+
+                    if v.TeamColor == lplr.TeamColor then
+                        --- Our Team
+                        BoxOutline.Visible = false
+                        Box.Visible = false
+                        HealthBarOutline.Visible = false
+                        HealthBar.Visible = false
+                    else
+                        ---Enemy Team
+                        BoxOutline.Visible = true
+                        Box.Visible = true
+                        HealthBarOutline.Visible = true
+                        HealthBar.Visible = true
+                    end
+
+                else
+                    BoxOutline.Visible = false
+                    Box.Visible = false
+                    HealthBarOutline.Visible = false
+                    HealthBar.Visible = false
+                end
+            else
+                BoxOutline.Visible = false
+                Box.Visible = false
+                HealthBarOutline.Visible = false
+                HealthBar.Visible = false
+            end
+        end)
+    end
+    coroutine.wrap(boxesp)()
+end)
+end})
+
+section3:button({name = "Delete Display Names",callback = function()
+    pcall(function()
+        for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+            if v.Character then
+                if v.Character:FindFirstChild("Humanoid") then
+                    v.Character:FindFirstChild("Humanoid").DisplayName = v.Name 
+                end
+            end
+        end
+    end)
+ end})
+
+ section3:button({name = "Kick When Mod Joins",callback = function()
+    local bitch = {
+        163721789,
+        15427717,
+        201454243,
+        822999,
+        63794379,
+        17260230,
+        28357488,
+        93101606,
+        8195210,
+        89473551,
+        16917269,
+        85989579,
+        1553950697,
+        476537893,
+        155627580,
+        31163456,
+        7200829,
+        25717070,
+        201454243,
+        15427717,
+        63794379,
+        16138978,
+        60660789,
+        17260230,
+        16138978,
+        1161411094,
+        9125623,
+        11319153,
+        34758833,
+        194109750,
+        35616559,
+        1257271138,
+        28885841,
+        23558830,
+        25717070,
+         
+        
+       }
+       
+       for l, c in pairs(game.Players:GetChildren()) do
+       for i, v in pairs(bitch) do
+       if c.UserId == v then
+       local Vanis = game.Players.LocalPlayer
+       Vanis:Kick("Mod Detected")
+       end
+       end
+       end
+       game.Players.PlayerAdded:Connect(function(plr)
+       for i, v in pairs(bitch) do
+       if plr.UserId == v then
+       local Vanis = game.Players.LocalPlayer
+       Vanis:Kick("Mod Detected")
+       end
+       end
+       end)
+ end})
+
+section4:button({name = "Rainbow Character [UnStopable]",callback = function()
+    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v:IsA("MeshPart") then
+            v.Material = "ForceField"
+            spawn(function()
+                while wait() do
+                    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                        if v:IsA("MeshPart") then
+                            v.Color = Color3.fromHSV(tick()%5/5,1,1)
+                            wait()
+                        end
+                    end 
+                end
+            end)
+        end
+    end
+end})
+
+section3:button({name = "Anti Bag",callback = function()
+    local LP = game.Players.LocalPlayer;
+
+    for i,v in ipairs(LP.Character:GetDescendants()) do
+        if v.Name == "Christmas_Sock" then v:Destroy()
+            end
+        end
+            
+        LP.Character.ChildAdded:Connect(function()
+        wait(0.3)
+        for i,v in ipairs(LP.Character:GetDescendants()) do
+        if v.Name == "Christmas_Sock" then v:Destroy()
+        end
+        end
+        end)
+end})
+
+
+section2:button({name = "Korblox",callback = function()
+    local ply = game.Players.LocalPlayer
+local chr = ply.Character
+chr.RightLowerLeg.MeshId = "902942093"
+chr.RightLowerLeg.Transparency = "1"
+chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+chr.RightFoot.MeshId = "902942089"
+chr.RightFoot.Transparency = "1"
+end})
+
+section2:button({name = "Headless",callback = function()
+    game.Players.LocalPlayer.Character.Head.Transparency = 1
+game.Players.LocalPlayer.Character.Head.Transparency = 1
+for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
+if (v:IsA("Decal")) then
+v.Transparency = 1
+end
+end
+end})
+
+
+section3:button({name = "Fe Fat",callback = function()
+    game.Players.LocalPlayer.Character.Humanoid.BodyDepthScale:Destroy()
+game.Players.LocalPlayer.Character.Humanoid.BodyWidthScale:Destroy()
+end})
+
+section1:button({name = "Two Tap Method [Look Up + Use Shift Lock]",callback = function()
+    local flashhasacrushonloris = game:GetService("CorePackages").Packages
+    flashhasacrushonloris:Destroy()
+end})
+
+section3:button({name = "CFrame Speed",callback = function()
+    repeat
+        wait()
+    until game:IsLoaded()
+    local L_134_ = game:service('Players')
+    local L_135_ = L_134_.LocalPlayer
+    repeat
+        wait()
+    until L_135_.Character
+    local L_136_ = game:service('UserInputService')
+    local L_137_ = game:service('RunService')
+    getgenv().Multiplier = 0.5
+    local L_138_ = true
+    local L_139_
+    L_136_.InputBegan:connect(function(L_140_arg0)
+        if L_140_arg0.KeyCode == Enum.KeyCode.LeftBracket then
+            Multiplier = Multiplier + 0.01
+            print(Multiplier)
+            wait(0.2)
+            while L_136_:IsKeyDown(Enum.KeyCode.LeftBracket) do
+                wait()
+                Multiplier = Multiplier + 0.01
+                print(Multiplier)
+            end
+        end
+        if L_140_arg0.KeyCode == Enum.KeyCode.RightBracket then
+            Multiplier = Multiplier - 0.01
+            print(Multiplier)
+            wait(0.2)
+            while L_136_:IsKeyDown(Enum.KeyCode.RightBracket) do
+                wait()
+                Multiplier = Multiplier - 0.01
+                print(Multiplier)
+            end
+        end
+        if L_140_arg0.KeyCode == Enum.KeyCode.Z then
+            L_138_ = not L_138_
+            if L_138_ == true then
+                repeat
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * Multiplier
+                    game:GetService("RunService").Stepped:wait()
+                until L_138_ == false
+            end
+        end
+    end)
+end})
+
+section3:slider({name = "CFrame Speed",def = 1, max = 15,min = 1,rounding = true,ticking = false,measuring = "",callback = function(value)
+    getgenv().Multiplier = value
+ end})
+
+ section3:button({name = "Fix CFrame",callback = function()
+
+    for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v:IsA("Script") and v.Name ~= "Health" and v.Name ~= "Sound" and v:FindFirstChild("LocalScript") then
+            v:Destroy()
+        end
+    end
+    game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+        repeat
+            wait()
+        until game.Players.LocalPlayer.Character
+        char.ChildAdded:Connect(function(child)
+            if child:IsA("Script") then 
+                wait(0.1)
+                if child:FindFirstChild("LocalScript") then
+                    child.LocalScript:FireServer()
+                end
+            end
+        end)
+    end)
+end})
+
+
+section4:button({name = "Color Correction",callback = function()
+local l = game:GetService("Lighting")
+
+local col = Instance.new("ColorCorrectionEffect", l)
+col.Brightness = 0
+col.Contrast = 0.01
+col.Saturation = 0.67
+ end})
+
